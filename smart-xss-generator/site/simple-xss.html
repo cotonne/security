@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Simple XSS</title>
+	<script>
+		document.write(decodeURI(window.location.hash));
+		document.write("<img" + decodeURI(window.location.hash) + "/>");
+	</script>
+	</head>
+	<body>
+		<select>
+			<script>
+document.write("<OPTION value=1>"+decodeURI(window.location.hash)+"</OPTION>");
+
+document.write("<OPTION value=2>English</OPTION>");
+
+</script></select>
+		<p id="xss"></p>
+		<script>
+			document.getElementById("xss").innerHTML = decodeURI(window.location.hash);
+		</script>
+	</body>
+</html>
