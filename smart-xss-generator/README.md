@@ -23,11 +23,12 @@ Simple XSS generator based on LSTM
 
 ## Mirror
 
+    cd site/
     python3 -m http.server --bind 127.0.0.1 8080
 
 ## Use model
 
-    PATH=$PWD/.driver:$PATH python3 tester.py 'http://localhost:8080/simple-xss.html#%3Cimg%20src=x%20onerror=%22alert(1)%22%20%3E' shakes_lstm_weights_5.h5
+    PATH=$PWD/.driver:$PATH python tester.py 'http://localhost:8080/simple-xss.html#' shakes_lstm_weights_5.h5 200 0.5
 
 # References
 

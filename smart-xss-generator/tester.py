@@ -77,7 +77,7 @@ def generate(payload_size, temperature):
       
       preds = model.predict(x, verbose=0)[0]
       # next_index = np.argmax(preds)
-      next_index = sample2(preds, temperature)
+      next_index = sample1(preds, temperature)
       next_char = indices_char[next_index]
       generated += next_char
       # Shift by one char to predict the Nth character
