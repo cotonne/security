@@ -6,29 +6,34 @@ Simple XSS generator based on LSTM
 
 ## Python
 
-    pip3 install keras selenium numpy
+    $ pip3 install keras selenium numpy
 
 ## Chrome Driver
 
-    wget https://chromedriver.storage.googleapis.com/75.0.3770.140/chromedriver_linux64.zip
-    unzip chromedriver_linux64.zip
-    mkdir .driver
-    mv geckodriver .driver/ 
+    $ wget https://chromedriver.storage.googleapis.com/75.0.3770.140/chromedriver_linux64.zip
+    $ unzip chromedriver_linux64.zip
+    $ mkdir .driver
+    $ mv geckodriver .driver/ 
 
 # Run
 
 ## Learn model
 
-    python3 build_model.py
+    $ python3 build_model.py
 
 ## Mirror
 
-    cd site/
-    python3 -m http.server --bind 127.0.0.1 8080
+    $ cd site/
+    $ python3 -m http.server --bind 127.0.0.1 8080
 
 ## Use model
 
-    PATH=$PWD/.driver:$PATH python tester.py 'http://localhost:8080/simple-xss.html#' shakes_lstm_weights_5.h5 200 0.5
+
+    $ python tester.py
+    Usage: tester.py <url> <model.h5> <payload size: 10 -> Infinity> <Temperature: 0 -> Infinity>
+    $ PATH=$PWD/.driver:$PATH python tester.py 'http://localhost:8080/simple-xss.html#' lstm_weights_5.h5 200 0.5
+
+    
 
 # References
 
