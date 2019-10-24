@@ -20,3 +20,5 @@ logging:
         framework:
           jdbc:
             core: DEBUG
+      springframework:
+        security: DEBUG
