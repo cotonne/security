@@ -9,7 +9,7 @@ $ firefox http://localhost:8080/swagger-ui.html
 To start a scan:
 
 ```bash
-$ export LOCAL_IP=192.168.1.16
+$ export LOCAL_IP=172.17.0.1
 $ docker run --rm owasp/zap2docker-weekly zap-api-scan.py -t http://$LOCAL_IP:8080/v3/api-docs -f openapi
 ```
 
