@@ -1,0 +1,19 @@
+<div>
+
+  <div class="map-container">
+    <div class="map-frame">
+      <div id="map"></div>
+    </div>
+  </div>
+  <div>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="content">
+          Content
+        </label>
+        <input id="content" type="text" formControlName="content">
+      </div>
+      <button class="button" type="submit">Create</button>
+    </form>
+  </div>
+</div>
